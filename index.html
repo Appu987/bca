@@ -270,15 +270,180 @@
       color: var(--text-muted); font-size: 0.8rem;
     }
 
+    /* ================================
+       RESPONSIVE BREAKPOINTS
+       ================================ */
+
+    /* --- Extra-Large screens (≤1400px) --- */
+    @media (max-width: 1400px) {
+      .container { max-width: 100%; padding: 30px 20px; }
+    }
+
+    /* --- Large screens / small laptops (≤1200px) --- */
+    @media (max-width: 1200px) {
+      .container { padding: 30px 16px; }
+      .header h1 { font-size: 2rem; }
+      .header h2 { font-size: 1.15rem; }
+      .stat-card { padding: 14px 20px; min-width: 110px; }
+    }
+
+    /* --- Tablets / medium screens (≤992px) --- */
+    @media (max-width: 992px) {
+      .container { padding: 24px 14px; }
+      .header h1 { font-size: 1.75rem; }
+      .header h2 { font-size: 1.05rem; }
+      .header .subtitle { font-size: 0.85rem; }
+      .header .college-logo { width: 65px; height: 65px; font-size: 28px; border-radius: 16px; }
+      .stats-bar { gap: 12px; }
+      .stat-card { padding: 12px 18px; min-width: 100px; }
+      .stat-card .stat-value { font-size: 1.4rem; }
+      .filter-btn { padding: 9px 20px; font-size: 0.82rem; }
+      table { min-width: 900px; }
+
+      /* Scroll hint for the table */
+      .table-scroll { position: relative; }
+      .table-scroll::after {
+        content: '← Scroll →';
+        display: block;
+        text-align: center;
+        padding: 8px;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+      }
+    }
+
+    /* --- Small tablets / large phones (≤768px) --- */
     @media (max-width: 768px) {
       .container { padding: 20px 10px; }
-      .header h1 { font-size: 1.5rem; }
-      .header h2 { font-size: 1rem; }
-      .stats-bar { gap: 10px; }
-      .stat-card { padding: 12px 16px; min-width: 100px; }
-      .filter-bar { gap: 8px; }
-      .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
+      .header { margin-bottom: 30px; }
+      .header .college-logo { width: 56px; height: 56px; font-size: 24px; border-radius: 14px; margin-bottom: 14px; }
+      .header h1 { font-size: 1.4rem; letter-spacing: -0.3px; }
+      .header h2 { font-size: 0.95rem; }
+      .header .subtitle { font-size: 0.78rem; }
+      .header .badge { padding: 5px 14px; font-size: 0.72rem; }
+      .stats-bar { gap: 8px; margin-bottom: 20px; }
+      .stat-card { padding: 10px 14px; min-width: 80px; border-radius: 10px; }
+      .stat-card .stat-value { font-size: 1.2rem; }
+      .stat-card .stat-label { font-size: 0.65rem; }
+      .filter-bar { gap: 6px; margin-bottom: 24px; }
+      .filter-btn { padding: 8px 14px; font-size: 0.78rem; border-radius: 10px; }
+      .table-wrapper { border-radius: 14px; }
+      table { min-width: 800px; }
+      thead th { padding: 12px 10px; font-size: 0.7rem; letter-spacing: 0.8px; }
+      tbody td { padding: 10px 8px; font-size: 0.78rem; }
+      td.day-cell { font-size: 0.82rem; min-width: 90px; }
+      .subject-tag { padding: 5px 10px; font-size: 0.72rem; }
+      .lab-tag { padding: 6px 12px; font-size: 0.72rem; }
+      .footer { margin-top: 24px; padding: 14px; font-size: 0.72rem; }
     }
+
+    /* --- Mobile phones (≤576px) — Card Layout --- */
+    @media (max-width: 576px) {
+      .container { padding: 16px 8px; }
+      .header { margin-bottom: 20px; }
+      .header .college-logo { width: 48px; height: 48px; font-size: 20px; border-radius: 12px; margin-bottom: 10px; }
+      .header h1 { font-size: 1.15rem; }
+      .header h2 { font-size: 0.85rem; margin-bottom: 4px; }
+      .header .subtitle { font-size: 0.7rem; }
+      .header .badge { margin-top: 10px; padding: 4px 12px; font-size: 0.68rem; }
+      .stats-bar { gap: 6px; margin-bottom: 16px; }
+      .stat-card { padding: 8px 10px; min-width: 70px; border-radius: 8px; }
+      .stat-card .stat-value { font-size: 1rem; }
+      .stat-card .stat-label { font-size: 0.6rem; letter-spacing: 0.5px; }
+      .filter-bar { gap: 5px; margin-bottom: 16px; }
+      .filter-btn { padding: 7px 10px; font-size: 0.72rem; border-radius: 8px; }
+
+      /* Hide the table, show cards */
+      .table-wrapper { display: none; }
+      .mobile-cards { display: flex !important; }
+    }
+
+    /* --- Extra small phones (≤400px) --- */
+    @media (max-width: 400px) {
+      .container { padding: 12px 6px; }
+      .header .college-logo { width: 42px; height: 42px; font-size: 18px; }
+      .header h1 { font-size: 1rem; }
+      .header h2 { font-size: 0.78rem; }
+      .header .subtitle { font-size: 0.65rem; }
+      .filter-bar { gap: 4px; }
+      .filter-btn { padding: 6px 8px; font-size: 0.68rem; }
+      .stat-card { padding: 6px 8px; min-width: 60px; }
+      .stat-card .stat-value { font-size: 0.9rem; }
+    }
+
+    /* ================================
+       MOBILE CARD LAYOUT STYLES
+       ================================ */
+    .mobile-cards {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .mobile-day-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mobile-day-header {
+      padding: 14px 18px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-day-header.current {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+    }
+
+    .mobile-slot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      transition: background 0.2s ease;
+    }
+
+    .mobile-slot:last-child { border-bottom: none; }
+    .mobile-slot:hover { background: rgba(59, 130, 246, 0.05); }
+
+    .mobile-slot-time {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      min-width: 80px;
+      white-space: nowrap;
+    }
+
+    .mobile-slot-subject {
+      text-align: right;
+      flex: 1;
+    }
+
+    .mobile-empty {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Custom scrollbar for table scroll */
+    .table-scroll::-webkit-scrollbar { height: 6px; }
+    .table-scroll::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); border-radius: 3px; }
+    .table-scroll::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.4); border-radius: 3px; }
+    .table-scroll::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.6); }
   </style>
 </head>
 <body>
@@ -348,6 +513,9 @@
       </div>
     </div>
 
+    <!-- Mobile Card View (visible on phones ≤576px) -->
+    <div class="mobile-cards" id="mobileCards"></div>
+
     <footer class="footer">
       <p>Department of Computer Science &bull; SSA Govt. First Grade College (Auto), Ballari</p>
       <p style="margin-top:6px; opacity:0.6;">K/H/T/U = Kannada / Hindi / Telugu / Urdu</p>
@@ -380,6 +548,7 @@
           { subject: "CG", type: "cg" },
           { subject: "Python Lab", type: "lab", colspan: 2 },
           { subject: "Python Lab 1", type: "lab", colspan: 2 }
+        
         ]
       },
       {
@@ -487,6 +656,73 @@
     }
 
     // ============================
+    // MOBILE CARD VIEW
+    // ============================
+    const timeSlots = [
+      "9:00–10:00", "10:00–11:00", "11:00–12:00", "12:00–1:00",
+      "1:00–2:00", "2:00–3:00", "3:00–4:00", "4:00–5:00"
+    ];
+
+    function renderMobileCards(filter = "all") {
+      const container = document.getElementById("mobileCards");
+      if (!container) return;
+      container.innerHTML = "";
+
+      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      const currentDay = days[new Date().getDay()];
+
+      timetableData.forEach((row) => {
+        if (filter !== "all" && row.day !== filter) return;
+
+        const card = document.createElement("div");
+        card.className = "mobile-day-card";
+
+        const header = document.createElement("div");
+        header.className = "mobile-day-header" + (row.day === currentDay ? " current" : "");
+        header.innerHTML = `<span>📅</span> ${row.day}`;
+        card.appendChild(header);
+
+        let slotIdx = 0;
+        row.slots.forEach(slot => {
+          if (slotIdx >= 8) return;
+          const div = document.createElement("div");
+          div.className = "mobile-slot";
+
+          const colspan = (slot && slot.colspan) ? slot.colspan : 1;
+          const endIdx = Math.min(slotIdx + colspan, 8);
+          const timeRange = timeSlots[slotIdx].split("–")[0] + "–" + timeSlots[endIdx - 1].split("–")[1];
+
+          div.innerHTML = `<span class="mobile-slot-time">${timeRange}</span>`;
+
+          if (slot === null) {
+            div.innerHTML += `<span class="mobile-slot-subject mobile-empty">—</span>`;
+          } else if (slot.type === "lab") {
+            div.innerHTML += `<span class="mobile-slot-subject"><span class="lab-tag"><span class="lab-icon">🖥️</span>${slot.subject}</span></span>`;
+          } else {
+            div.innerHTML += `<span class="mobile-slot-subject"><span class="subject-tag subj-${slot.type}">${slot.subject}</span></span>`;
+          }
+
+          card.appendChild(div);
+          slotIdx += colspan;
+        });
+
+        container.appendChild(card);
+      });
+
+      // Card entrance animation
+      const cards = container.querySelectorAll(".mobile-day-card");
+      cards.forEach((c, i) => {
+        c.style.opacity = "0";
+        c.style.transform = "translateY(12px)";
+        c.style.transition = `opacity 0.4s ease ${i * 0.08}s, transform 0.4s ease ${i * 0.08}s`;
+        requestAnimationFrame(() => {
+          c.style.opacity = "1";
+          c.style.transform = "translateY(0)";
+        });
+      });
+    }
+
+    // ============================
     // FILTER BUTTONS
     // ============================
     document.querySelectorAll(".filter-btn").forEach(btn => {
@@ -494,11 +730,13 @@
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         renderTable(btn.dataset.filter);
+        renderMobileCards(btn.dataset.filter);
       });
     });
 
     // Initial render
     renderTable();
+    renderMobileCards();
   </script>
 </body>
 </html>
